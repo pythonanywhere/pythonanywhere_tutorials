@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+
+        <link rel="stylesheet" href="/static/anywhere/styles/common_base.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="/static/anywhere/styles/tutorial.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="/static/pygments/style.css" type="text/css" media="screen" charset="utf-8" />
+
+        <script type="text/javascript">
+            parent.setHash({{ pagenum }});
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-18014859-6']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+
+        <title>{{ title }}</title>
+
+    </head>
+
+    <body>
+        {% autoescape off %}
+            <h3>{{ title }}</h3>
+
+            {{ body }}
+        {% endautoescape %}
+    </body>
+</html>
+
+
+
+
