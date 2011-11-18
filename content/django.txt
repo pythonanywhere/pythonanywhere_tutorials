@@ -1,0 +1,98 @@
+Creating a new django project on Python Anywhere
+=================================================================================
+The five minute guide
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+
+So you want to create a web application but you don't really want to do all the 
+faffing around that is involved in setting up and configuring web servers?
+
+Well that is one of the reasons we created Python Anywhere. This tutorial will
+take you through the process of creating a working django site with an admin 
+interface and a front page that tells you the time.  
+
+To follow along with this tutorial you will need a `Python Anywhere <http://www.pythonanywhere.com/>`_
+account. Go and sign up if you don't already have one then come back here. 
+
+.. contents::
+
+
+
+.. image:: http://www.pythonanywhere.com/static/anywhere/images/favicon.ico
+
+
+
+The really quick start guide
+---------------------------------------------------------------------------------
+
+To start with, for those people who are already very confident with django we will
+just start with a list of the steps and commands you need to run in order to get 
+a working django app on Python Anywhere. Don't worry if you don't understand these
+now. We will go through each one step by step further down. 
+
+
+header 2
++++++++++++++++++++++++++
+
+header 3 
+________________________
+
+
+Starting a new django project
+---------------------------------------------------------------------------------
+
+
+
+Editing your wsgi.py file
+---------------------------------------------------------------------------------
+
+
+
+Configuring the database and enabling the admin interface
+---------------------------------------------------------------------------------
+
+
+
+Defining your urls
+---------------------------------------------------------------------------------
+
+
+
+
+
+Creating a template
+---------------------------------------------------------------------------------
+
+
+
+
+
+Writing the first view
+---------------------------------------------------------------------------------
+
+
+
+
+
+Python Anywhere specific tips
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+::
+
+    import os
+    import sys
+    ## assuming your django settings file is at '/home/myname/mysite/settings.py'
+    path = '/home/%s/'
+     if path not in sys.path:
+         sys.path.append(path)
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'my_test_project.settings'
+    import django.core.handlers.wsgi
+    application = django.core.handlers.wsgi.WSGIHandler()
+
+Once your wsgi.py file looks like this we can move on.
