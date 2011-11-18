@@ -9,6 +9,10 @@
         <link rel="icon" href="http://www.pythonanywhere.com/static/anywhere/images/favicon.ico" type="image/x-icon"> 
         <link rel="shortcut icon" href="http://www.pythonanywhere.com/static/anywhere/images/favicon.ico" type="image/x-icon"> 
 
+        <style type="text/css">
+            img {border: 1px; color:grey; align: center;}
+        </style>
+
         <script type="text/javascript">
             parent.setHash({{ pagenum }});
 
@@ -28,12 +32,15 @@
 
     </head>
 
-    <body>
+    <body style="margin:50px 0px; padding:0px; text-align:center;">
+    <div style="width:900px; margin:0px auto; text-align:left;">
+    
         {% autoescape off %}
             <h1 id="id_tutorial_title">{{ title }}</h1>
 
             {{ body }}
         {% endautoescape %}
+    </div>
     </body>
 </html>
 

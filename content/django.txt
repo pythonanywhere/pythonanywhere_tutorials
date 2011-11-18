@@ -16,7 +16,7 @@ account. Go and sign up if you don't already have one then come back here.
 
 
 
-.. image:: http://www.pythonanywhere.com/static/anywhere/images/favicon.ico
+
 
 
 
@@ -191,6 +191,16 @@ serving a page that tells you the time.
 
 The gruesome details for beginners
 =================================================================================
+
+The main web tab at Python Anywhere looks like this:
+
+.. image:: http://www.pythonanywhere.com/static/anywhere/images/tutorial/django/pa_web_dashboard.jpg
+
+To edit your wsgi.py file you click the link with that name. Every time you
+make a change to the files on the Python Anywhere servers you need to click the 
+"Reload web app" button. This reloads the web server so that it notices the 
+changes you have made. 
+
 
 
 Starting a new django project
