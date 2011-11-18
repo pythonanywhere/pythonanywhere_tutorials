@@ -1,8 +1,6 @@
+=================================================================================
 Creating a new django project on Python Anywhere
 =================================================================================
-The five minute guide
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
 
 So you want to create a web application but you don't really want to do all the 
 faffing around that is involved in setting up and configuring web servers?
@@ -14,7 +12,7 @@ interface and a front page that tells you the time.
 To follow along with this tutorial you will need a `Python Anywhere <http://www.pythonanywhere.com/>`_
 account. Go and sign up if you don't already have one then come back here. 
 
-.. contents::
+.. contents:: Table of Contents 
 
 
 
@@ -23,19 +21,176 @@ account. Go and sign up if you don't already have one then come back here.
 
 
 The really quick start guide
----------------------------------------------------------------------------------
+=================================================================================
 
 To start with, for those people who are already very confident with django we will
 just start with a list of the steps and commands you need to run in order to get 
 a working django app on Python Anywhere. Don't worry if you don't understand these
-now. We will go through each one step by step further down. 
+now. We will go through each one, step by step, further down. 
+
+So, the really quick start guide:
+
+Create the project files
+---------------------------------------------------------------------------------
+
+Open a bash console on Python Anywhere and enter the following commands
+
+:: 
+
+ django-admin.py startproject <my project name>
+ cd <your project name>
+ python manage.py startapp <my app name>
 
 
-header 2
-+++++++++++++++++++++++++
+Edit the wsgi file
+---------------------------------------------------------------------------------
 
-header 3 
-________________________
+Go back to your dashboard and click on the web tab, then click on the link to 
+edit your wsgi.py file. Delete the contents and copy the code below into it. 
+Changing "<my name>" to be your Python Anywhere username and <my project name> 
+so that it matches the value you entered above. 
+
+::
+
+    # +++++++++++ DJANGO +++++++++++
+    import os
+    import sys
+    
+    ## assuming your django settings file is at '/home/<my name>/<my project name>/settings.py'
+    path = '/home/<my name>/'
+    if path not in sys.path:
+        sys.path.append(path)
+    
+    os.environ['DJANGO_SETTINGS_MODULE'] = '<my project name>.settings'
+    
+    import django.core.handlers.wsgi
+    application = django.core.handlers.wsgi.WSGIHandler()
+
+You should now have a default django app which you can visit at <my name>.pythonanywhere.com
+
+Edit settings.py
+---------------------------------------------------------------------------------
+
+Now you need to edit settings.py inside the project directory and change the 
+database and installed apps sections to match the code below.
+
+::
+    
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': '/home/%s/my_test_project/db.sqlite',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': ''
+        }
+    }
+    
+    INSTALLED_APPS += (
+        'django.contrib.admin',
+        'my_test_project.my_app',
+    )
+ 
+
+Create empty database and edit urls.py
+---------------------------------------------------------------------------------
+
+Now it is back to your bash console to perform the initial database creation
+
+::
+
+    cd <your project name>
+    ./manage.py syncdb
+
+This will ask you to create an admin user. Follow the prompts and you remember
+the password. You will need it to login to the admin interface. 
+
+Next you will need to edit the urls.py file which can be found inside your 
+project folder. Make it look like the one below but insure you substitute the 
+project and app names that you used previously. 
+
+::
+
+    from django.conf.urls.defaults import patterns, include, url
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+    
+    # Uncomment the next two lines to enable the admin:
+    from django.contrib import admin
+    admin.autodiscover()
+    
+    urlpatterns = patterns('',
+        # Examples:
+        url(r'^$', '<my project name>.<my app name>.views.home', name='home'),
+        # url(r'^<my project name>/', include('<my project name>.foo.urls')),
+    
+        # Uncomment the admin/doc line below to enable admin documentation:
+        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    
+        # Uncomment the next line to enable the admin:
+        url(r'^admin/', include(admin.site.urls)),
+    )
+    # This is needed to serve static files like images and css
+    urlpatterns += staticfiles_urlpatterns()
+
+At this stage you have a working admin interface and can visit it at 
+<my name>.pythonanywhere.com/admin. We are almost finished. Next we will go back 
+to our bash console and create a templates folder and blank template.
+
+
+Create a root template  
+---------------------------------------------------------------------------------
+
+::
+
+    mkdir <my project name>/templates
+    touch <my project name>/templates/home.html
+
+Now we will edit the home.html template file so that it looks like this.
+
+::
+
+    <html>
+    <head>
+        <title>My Python Anywhere hosted Django app</title>
+    </head>
+    <body>
+        <h1>My Python Anywhere hosted Django app</h1>
+        <p>Well, since it's already {{ right_now.minute }} past {{ right_now.hour }} UTC,
+        that is as far as we are going to take you in this tutorial.</p>
+        <p>What you do next is up to you...</p>
+    </body>
+    </html>
+
+
+Create your first view in views.py
+---------------------------------------------------------------------------------
+
+The final piece of work we need to do is create a view inside the file found at
+<my project name>/<my app name>/views.py. Make it look like this.
+
+::
+
+    from datetime import datetime
+    
+    from django.shortcuts import render
+    
+    def home(request):
+        return render(request, 'home.html', {'right_now':datetime.utcnow()})
+
+
+Reload the web server and enjoy!
+---------------------------------------------------------------------------------
+
+Now you just need to reload the web server so that it notices the changes you 
+have made. Visit the Web tab on the Python Anywhere dashboard and click the 
+"Reload web app" button. That's it. You can now see your newly created web app
+serving a page that tells you the time. 
+
+
+
+The gruesome details for beginners
+=================================================================================
 
 
 Starting a new django project
@@ -75,7 +230,7 @@ Writing the first view
 
 
 Python Anywhere specific tips
----------------------------------------------------------------------------------
+=================================================================================
 
 
 

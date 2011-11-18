@@ -1,10 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
     <head>
-
-        <link rel="stylesheet" href="http://www.pythonanywhere.com/static/anywhere/styles/common_base.css" type="text/css" media="screen" charset="utf-8" />
         <link rel="stylesheet" href="http://www.pythonanywhere.com/static/anywhere/styles/tutorial.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="http://www.pythonanywhere.com/static/anywhere/styles/common_base.css" type="text/css" media="screen" charset="utf-8" />
+
         <link rel="stylesheet" href="http://www.pythonanywhere.com/static/pygments/style.css" type="text/css" media="screen" charset="utf-8" />
+
+        <link rel="icon" href="http://www.pythonanywhere.com/static/anywhere/images/favicon.ico" type="image/x-icon"> 
+        <link rel="shortcut icon" href="http://www.pythonanywhere.com/static/anywhere/images/favicon.ico" type="image/x-icon"> 
 
         <script type="text/javascript">
             parent.setHash({{ pagenum }});
@@ -27,7 +30,7 @@
 
     <body>
         {% autoescape off %}
-            <h3>{{ title }}</h3>
+            <h1 id="id_tutorial_title">{{ title }}</h1>
 
             {{ body }}
         {% endautoescape %}
