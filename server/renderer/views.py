@@ -2,6 +2,8 @@
 # All Rights Reserved
 #
 
+import python_highlighting
+
 from docutils.core import publish_parts
 import os
 
@@ -9,6 +11,8 @@ from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.shortcuts import render_to_response
 from django.views.generic.simple import redirect_to
+
+
 
 
 CONTENT_DIR = os.path.abspath(
