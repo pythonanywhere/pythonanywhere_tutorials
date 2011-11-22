@@ -194,7 +194,7 @@ The gruesome details for beginners
 
 The main web tab at Python Anywhere looks like this:
 
-.. image:: http://www.pythonanywhere.com/static/anywhere/images/tutorial/django/pa_web_dashboard.jpg
+.. image:: http://tutorial.pythonanywhere.com/static/django/pa_web_dashboard.jpg
 
 To edit your wsgi.py file you click the link titled "this WSGI file". Every 
 time you make a change to the files on the Python Anywhere servers you need to 
@@ -218,7 +218,7 @@ Starting a new django project
 Django is already installed on Python Anywhere so you it is easy to get started. 
 
 
-.. image:: http://www.pythonanywhere.com/static/anywhere/images/tutorial/django/pa_console_dashboard.jpg
+.. image:: http://tutorial.pythonanywhere.com/static/django/pa_console_dashboard.jpg
 
 The first commands need to be run inside a bash console. You will need to go to 
 the "Consoles" tab of Python Anywhere and click on the link highlighted in red 
@@ -249,7 +249,7 @@ So, enter the code below into a bash console:
 Below is a an example of what your console should look like after you have done 
 this.
 
-.. image:: http://www.pythonanywhere.com/static/anywhere/images/tutorial/django/pa_console_django_start.jpg
+.. image:: http://tutorial.pythonanywhere.com/static/django/pa_console_django_start.jpg
 
 Your next step is to edit the wsgi.py file which is located at /var/www/wsgi.py.
 
