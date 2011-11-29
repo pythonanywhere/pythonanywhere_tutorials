@@ -8,10 +8,6 @@ written by one of the developers. If you have an interesting tutorial on how to
 use Python Anywhere then send it to us and we will publish it here or provide a 
 link. 
 
-List of tutorials 
-=================================================================================
-.. contents::
-
 
 
 
