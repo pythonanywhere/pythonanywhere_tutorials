@@ -159,9 +159,9 @@ should replace them with your project name or app name, if necessary.
     admin.autodiscover()
 
     urlpatterns = patterns('',
-        # Examples:
-        url(r'^$', 'mysite.myapp.views.home', name='home'),
-        # url(r'^foo/', include('mysite.foo.urls')),
+        # This is going to be our home view.
+        # We'll uncomment it later
+        # url(r'^$', 'mysite.myapp.views.home', name='home'),
 
         # Uncomment the admin/doc line below to enable admin documentation:
         # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -248,6 +248,15 @@ Copy the code below into it and save the file.
 
     def home(request):
         return render(request, 'home.html', {'right_now':datetime.utcnow()})
+
+
+Now that we've defined the view, we can uncomment this line in urls.py
+
+
+.. sourcecode:: python
+
+        # url(r'^$', 'mysite.myapp.views.home', name='home'),
+
 
 The last step is reloading your web app so that the changes are noticed by the
 web server. Go and do that now, back in the **Web** tab with the big
