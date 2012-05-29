@@ -83,7 +83,8 @@ Go to the **Files** tab on your dashboard, find your project folder, and then
 find ``settings.py`` inside it.
 
 We will need to change the ``DATABASE`` and ``INSTALLED_APPS`` sections
-so that it looks like the code below. Do not change any other bits of it
+so that it looks like the code below. With your username and project name
+replaced on the line beginning with NAME. Do not change any other bits of it
 at this time.
 
 .. sourcecode:: python
@@ -114,7 +115,7 @@ at this time.
         'django.contrib.admin',
         # Uncomment the next line to enable admin documentation:
         # 'django.contrib.admindocs',
-        'mysite.myapp`,
+        'mysite.myapp',
     )
 
 (Replace ``mysite.myapp`` with ``your-project-name.your-app-name`` if neccesary.)
@@ -152,7 +153,6 @@ should replace them with your project name or app name, if necessary.
 .. sourcecode:: python
 
     from django.conf.urls.defaults import patterns, include, url
-    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
     # Uncomment the next two lines to enable the admin:
     from django.contrib import admin
