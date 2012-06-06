@@ -2,11 +2,10 @@
 Python Anywhere tutorials
 =================================================================================
 
-We are building a collection of tutorials for using Python Anywhere. So far 
-we have the django set up guide and information on starting a web2py project 
-written by one of the developers. If you have an interesting tutorial on how to
-use Python Anywhere then send it to us and we will publish it here or provide a 
-link. 
+We are building a collection of tutorials for using Python Anywhere. So far
+we have the Django set up guide. If you have an interesting tutorial on how to
+use Python Anywhere then send it to us and we will publish it here or provide a
+link.
 
 
 
@@ -14,13 +13,7 @@ link.
 `Django set up guide <http://tutorial.pythonanywhere.com/django>`_
 ---------------------------------------------------------------------------------
 
-A step by step guide to creating a working django instance that displays a 
-simple dynamic page and has a working admin interface. Also includes the basic 
-information required for someone that already understands django but needs to 
-know the specifics of setting it up on Python Anywhere. 
-
-
-`1 Minute install WEB2PY on PythonAnywhere <http://web2py.pythonanywhere.com>`_
----------------------------------------------------------------------------------
-
-Web2py developer gives his 1 minute setup guide for Python Anywhere. 
+A step by step guide to creating a working django instance that displays a
+simple dynamic page and has a working admin interface. Also includes the basic
+information required for someone that already understands django but needs to
+know the specifics of setting it up on Python Anywhere.
