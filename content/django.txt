@@ -145,7 +145,8 @@ directory as your ``settings.py`` file.
 
 Open it up and make it look like the file below - you'll need to uncomment 3
 lines to do with admin, fix the first url line, and uncomment the last couple
-of lines to enable static files.
+of lines to enable static files (remember that you have to delete the leading
+spaces as well as the `#` marks to uncomment).
 
 Remember, as always, that each time you see ``mysite`` or ``myapp``, you
 should replace them with your project name or app name, if necessary.
