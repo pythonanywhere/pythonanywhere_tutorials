@@ -27,13 +27,18 @@ Tutorial: Setting up a new Django app on Pythonanywhere
 Quickstarting a new project, using the big pony button
 ---------------------------------------------------------------------------------
 
-Log into PythonAnywhere, got the the **Web** tab, and click on the big
-"New Django App" button:
+Log into PythonAnywhere, go to the **Web** tab, and click on
+**Add a new web app** link.
 
-.. image:: static/django/new_django_button.png
+This will pop up a dialog that asks you to enter your own domain or gives you
+the option of using <username>.pythonanywhere.com. Just select that for now and
+click next.
+
+Now you will be presented with a list of the various Web frameworks you can
+choose from. Select **Django**.
 
 This will bring up a menu - feel free to change the *Project Name* to something
-more descriptive.  The default *Directory* is fine, or if you prefer you
+more descriptive.  The default directory is fine, or if you prefer you
 can put the app into your Dropbox - but you'll need to have set up a shared
 Dropbox folder already.  There's more info on that in the **Files** tab on
 your dashboard
@@ -267,7 +272,8 @@ If you have followed along with this tutorial you should now have a working,
 dynamic page at <your username>.pythonanywhere.com.
 
 You can continue to experiment with this by changing the view and the template a
-s well as read through the full Django documentation https://docs.djangoproject.com
+s well as progress through the full Django tutorial starting here:
+https://docs.djangoproject.com/en/dev/intro/tutorial01/#creating-models
 to see what else is possible.
 
 But for now, that's the end of the tutorial.  Happy coding!
