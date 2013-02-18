@@ -209,9 +209,14 @@ Creating a template
 
 Now that you have a working admin interface it is time to create a template.
 
-Go to the **Files** tab and create a directory for your template inside your
-app folder - Inside ``mysite``, go to ``myapp``,
-then enter **templates** as the new directory name
+First you need to create a directory for your template inside your
+app folder:
+
+* Go to the **Files** tab.
+* Go to your ``mysite`` directory
+* Then go down to ``myapp``
+* Enter **templates** into the "Enter a new directory name" field at the top of
+  the page  and click the "New" button next to it.
 
 Now create a new file inside the templates folder called ``home.html``,
 and make it look like this.
