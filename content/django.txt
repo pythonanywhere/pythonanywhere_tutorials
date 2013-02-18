@@ -1,22 +1,22 @@
 =================================================================================
-Creating a new Django project on Python Anywhere
+Creating a new Django project on PythonAnywhere
 =================================================================================
 
-So you want to create a web application but you don't really want to do all the
+So you want to create a web application, but you don't really want to do all the
 faffing around that is involved in setting up and configuring web servers?
 
-Well that is one of the reasons we created Python Anywhere. This tutorial will
+Well, that's one of the reasons we created PythonAnywhere. This tutorial will
 take you through the process of creating a working Django site with an admin
-interface and a front page that tells you the time.
+interface and a front page that tells you the time.  At the end of the tutorial,
+there's also an overview of options you can use if you already know
+Django, and you have already coded up a web app which you want to
+use on PythonAnywhere.
 
 To follow along with this tutorial you will need a
-`Python Anywhere <http://www.pythonanywhere.com/>`_
+`PythonAnywhere <http://www.pythonanywhere.com/>`_
 account. Go and sign up if you don't already have one then come back here.
 
-At the end of the tutorial, there's also an overview of the
-"manual config / existing apps" button, which you can use if you already know
-Django, and you have already coded up a web app which you want to
-use on PythonAnywhere.com.
+
 
 
 .. contents:: Table of Contents
@@ -24,28 +24,29 @@ use on PythonAnywhere.com.
 Tutorial: Setting up a new Django app on Pythonanywhere
 =================================================================================
 
-Quickstarting a new project, using the big pony button
+Quickstarting a new project
 ---------------------------------------------------------------------------------
 
 Log into PythonAnywhere, go to the **Web** tab, and click on
 **Add a new web app** link.
 
-This will pop up a dialog that asks you to enter your own domain or gives you
+This will pop up a dialog, whose first page asks you to enter your own domain or gives you
 the option of using <username>.pythonanywhere.com. Just select that for now and
 click next.
 
 Now you will be presented with a list of the various Web frameworks you can
 choose from. Select **Django**.
 
-This will bring up a menu - feel free to change the *Project Name* to something
+This will bring up some options - feel free to change the *Project Name* to something
 more descriptive.  The default directory is fine, or if you prefer you
 can put the app into your Dropbox - but you'll need to have set up a shared
 Dropbox folder already.  There's more info on that in the **Files** tab on
 your dashboard
 
-Click the **Next** button, and a very basic app will be up and running!  Just
-click the url to go see it - you should see the default "Welcome to Django"
-page.
+Click the **Next** button, and after a few seconds, the wizard dialog will
+disappear and a very basic app will be up and running!  Just
+click the URL at the top of the screen to go see it - you should see the default
+"Welcome to Django" page.
 
 Creating an app inside the Django project
 ---------------------------------------------------------------------------------
@@ -54,14 +55,14 @@ Django suggest that you structure your sites as *projects* which contain one or
 more *apps* - the idea is that you can re-use an app in different projects.
 
 Let's create our first app inside your project. In order to do this you start a
-*Bash Console* -- you can do this from the **Web** tab on the dashboard.
+*Bash Console* -- you can do this from the **Consoles** tab on the dashboard.
 
 In the console, enter the following commands:
 
 ::
 
     cd mysite
-    ./manage.py startapp myapp
+    python ./manage.py startapp myapp
 
 (replace ``mysite`` with the name of your project, if you chose a different one)
 
@@ -75,7 +76,7 @@ with the rest of the tutorial in a different tab.
 Configuring the database and enabling the admin interface
 ---------------------------------------------------------------------------------
 
-Django needs a database connection to do pretty much anything. Python Anywhere
+Django needs a database connection to do pretty much anything. PythonAnywhere
 provides support for MySQL databases but for now we will just use ``sqlite3``,
 a file based database that does not require setting up a database account and
 password.
@@ -131,8 +132,7 @@ Go back to your Bash console and enter the following commands:
 
 ::
 
-    cd <your project name>
-    ./manage.py syncdb
+    python ./manage.py syncdb
 
 You will be asked a series of questions. You should enter a username, email
 address, and password for the first admin user. You will need this information
@@ -198,7 +198,7 @@ earlier. When you are done come back here to continue.
 
 If you get an error rather than the admin interface then go back through each of
 these steps and check that everything is exactly like the examples. You also
-might want to check the error logs, available from the web tab, and see if they
+might want to check the error logs, available from the **Web** tab, and see if they
 can give you additional clues about where the the mistake might be.
 
 
@@ -271,8 +271,8 @@ web server. Go and do that now, back in the **Web** tab with the big
 If you have followed along with this tutorial you should now have a working,
 dynamic page at <your username>.pythonanywhere.com.
 
-You can continue to experiment with this by changing the view and the template a
-s well as progress through the full Django tutorial starting here:
+You can continue to experiment with this by changing the view and the template
+as well as progress through the full Django tutorial starting here:
 https://docs.djangoproject.com/en/dev/intro/tutorial01/#creating-models
 to see what else is possible.
 
@@ -320,9 +320,18 @@ Those two together should add up to the full path to the project root. Crystal-c
 Edit the wsgi file
 ---------------------------------------------------------------------------------
 
-Go to your PythonAnywhere *Dashboard* and click on the *Web* tab, then click on
-the button for **Existing Apps & Other frameworks**, and click the
-**Edit WSGI file** button.
+Go to your PythonAnywhere *Dashboard* and click on the *Web* tab, then click the
+**Add a new web app** button.  In the first step, just enter the domain
+where you want to host your site, then in the second, instead of selecting
+"Django", select **Manual configuration**.  This will set up a web app but
+won't try to create a new Django project for you.
+
+Once you've clicked next on the next page, you near the top of the page some
+text saying something like *It is configured via a WSGI file stored at: /var/www/something_com_wsgi.py"*
+The filename is a link, and if you click there you'll be taken to an editor
+displaying a *WSGI configuration file* that tells PythonAnywhere how to manage
+your site.  If you're a WSGI wizard then you can probably work out what to do
+from here.  But if not, just follow the steps below:
 
 Delete the contents and replace them with the below, replacing
 ``/home/my_username/projects`` with the path to the parent folder of your project,
